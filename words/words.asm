@@ -1,4 +1,4 @@
-;nasm -f elf32 words.asm -o words.o && ld -m elf_i386 words.o -o words && ./words; echo $?
+;nasm -f elf32 words.asm -o words.o && ld -m elf_i386 words.o -o words && ./words && echo $?
 
 ; change y to H before printing 
 ; section .text
@@ -26,7 +26,7 @@
 section .text
 global _start
 
-_start:
+_start:nasm -f elf32 calculator.asm -o calculator.o && ld -m elf_i386 calculator.o -o calculator && ./calculator; echo $?
     mov edx, len
     mov ecx, msg
     mov ebx, 1  ;stdout file descriptor
