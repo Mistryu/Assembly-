@@ -1,4 +1,4 @@
-;nasm -f elf32 calculator.asm -o calculator.o && ld -m elf_i386 calculator.o -o calculator && ./calculator; echo $?
+;nasm -f elf32 calculator.asm -o calculator.o && ld -m elf_i386 calculator.o -o calculator && ./calculator && echo $?
 
 
 ;TODO: do a calculator that does additon subtraction multiplication and divison 3 inputs
@@ -22,8 +22,8 @@ _start:
 
     mov ebx, 2          ; getting input from user
     mov eax, 3
-    mov ecx, first_input
-    mov edx, 100
+    mov cx, first_input
+    mov dx, 100
     int 0x80
 
     mov ebx, 1      ; print the 1st input
